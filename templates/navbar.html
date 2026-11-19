@@ -1,0 +1,33 @@
+{{define "navbar"}}
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand" href="/">
+            Student Management
+        </a>
+
+        <div class="d-flex align-items-center gap-2">
+
+            {{if .IsAdmin}}
+                <a href="/users" class="btn btn-outline-light btn-sm">
+                    Users
+                </a>
+            {{end}}
+
+            <span class="text-white small">
+                {{.Username}}
+                <span class="badge bg-secondary">
+                    {{.Role}}
+                </span>
+            </span>
+
+            <a href="/logout" class="btn btn-danger btn-sm">
+                Logout
+            </a>
+
+        </div>
+    </div>
+</nav>
+
+{{end}}
